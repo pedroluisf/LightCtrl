@@ -1,0 +1,40 @@
+body
+{
+    background: #FFFFFF;
+}
+
+#page
+{
+    border: 0px;
+}
+
+#header {
+    border-top: 0px;
+    background-color: #FFFFFF;
+    background-image: url("../images/lightctr.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+#table_title {
+    margin-top: 0px;
+    width: 50%;
+}
+#report_title {
+    font-family: "Arial";
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+.dotted {
+    border-bottom: solid 1px #85BAD8;
+}
+p {
+    line-height: 10px;
+}
+

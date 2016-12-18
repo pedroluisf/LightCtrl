@@ -1,0 +1,18 @@
+.container { width:99%; margin:0 auto; }
+
+.columns { margin: auto;}
+
+.left-column { width: 200px; float: left; }
+
+.right-column {margin-left: 200px; }
+
+/*#footer {*/
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+    /*width: 99%;*/
+    /*background-color: #fff;*/
+/*}*/
+
+#report-grid .summary {
+    margin-right: 15px;
+}

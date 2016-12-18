@@ -1,0 +1,217 @@
+This will install Lighting Controls Headend Application
+
+Please make sure you are running MySQL by activating it on Xampp Control Panel. 
+This is needed for installing / updating the Database.
+
+                                       ----------------------------------------
+                                       -=        RELEASE NOTES          =-
+                                       ----------------------------------------
+v 1.1.6 on 2015-07-18
+---------------------
+Migration: m150717_220722_changes_queue
+---------------------
+- Cleanup of command Queue will also delete non completed commands after max number days;
+- Devices that do not belong to any group, are now hidden;
+- Export of reports now keep selected sorting;
+- Fixed broken headers on csv reports;
+- Merged filtering on Charts/Html;
+- Filters are now kept when changing view between Chart/Html;
+- Fixed a few bugs on charts;
+- Added last_response on Command Queue;
+- NOK responses do not trigger retries (marked as failed and not error);
+- Increased Memory limit on php.ini for 1024 MB;
+
+v 1.1.5 on 2015-07-04
+---------------------
+- Default filter dates for charts now show 30 days behind instead of ahead;
+- Consumption Maps on Charts ciew now only show total data;
+- Consumption Maps on Table view now only show detailed data;
+- Caneth Request now log request-response (except for Status);
+- Index page pre-selects first option if available;
+- Status Hist allows for Date Interval to be filtered;
+- Emergency Hist allows for Date Interval to be filtered;
+- Allowed for configuration fields to be empty and logo can be deleted;
+- Logo and Client name can now be showned side by side;
+- Added "Read All" / "Delete All" on Notifications;
+- Fixed bug on dblClick on reports after applying filters / Sorting;
+- Fixed bug on Chart for Consumption daily (Filters not working);
+- Fixed bug on Chart for Consumption hourly (wrong data values);
+- Fixed bugs on charts;
+- Fixed broken pagination on consumption tables;
+- Changed Order on Command Queue so old commands do not override new ones;
+- CSV Upload for components config allow csv without energetic class;
+- Fixed bugs on Schedules (Waiting taks and Executed tasks) some filters were not working;
+- Commands in CommandQueue older than 90 days are now deleted (needed to set in app config);
+- Created List of Scheduled Emergency Tests on Reports;
+- Fixed bug where front-end cache was not being updated with app_version;
+- Fixed bug (missing id_area) on charts;
+
+v 1.1.4 on 2015-06-18
+---------------------
+- Status records older than 90 days are now deleted;
+- Added amCharts library;
+- Created Charts for existing Consumption by date (Hours and Watts);
+- Added Consumption by Floor chart and HTML;
+- Added Consumption by Hour chart and HTML;
+
+v 1.1.3 on 2015-05-12
+---------------------
+- Fixed broken pdf and csv action on status history report;
+- Fixed Filters not filtering on Reports;
+- Fixed filters description not showing in pdf/csv;
+- Fixed floors and descriptions not showing in status report;
+- removed redundant view for Emergency Reports;
+- Fixed bug on emergency report not showing correct date;
+
+v 1.1.2 on 2015-04-14
+---------------------
+- Fixed Bug when merging configs;
+- Merging configs now create a log when something fails;
+- Ethernet configuration - checkbox to clear old data only enabled when uploading new json;
+- Consolidate data - Increased memory for 1024 MB;
+- Reorganized Models and components folder;
+
+v 1.1.1 on 2015-04-03 - Consumption Maps
+---------------------
+Migration: m150319_225235_tbl_energetic_class
+---------------------
+- Added table for control with key-value pair structure;
+- Added table for consolidated Consumption;
+- Added cronjob to consolidate consumption of devices every day at 1:00;
+- Added Form Maintenance for table Energetic Class;
+- Added csv Upload for table Energetic Class;
+- Added csv Upload for assigning Energetic Class on each device;
+- Added Consumption Maps Hours/Day;
+- Added PDF and CSV for Consumption Maps Hours/Day;
+- Added Consumption Maps Watts/Day;
+- Added PDF and CSV for Consumption Maps Watts/Day;
+
+v 1.0.20 on 2015-03-07
+---------------------
+Migration: m150305_231721_inactive_caneths
+---------------------
+- Installer now prompts the user if Cronjobs should be removed before starting instalation;
+- Caneths can be inactive. That way they will only show on reports;
+- New button for Cancel Overrides DALI Command;
+- Status Requests and ETT run immediatly (if possible) when user clicks on index page;
+- Fixed Bug where queue commands where not being triggered every minute, but every 2 minutes;
+- Fixed bug with config merger when installing a fresh install (not happenning with upgrades);
+
+v 1.0.19 on 2015-01-29
+---------------------
+Migration: m150127_233757_status_emergency_battery_failure
+---------------------
+- Changed Csv Updates for components (draw_id is updated);
+- Added "Clear Old Data" option for when uploading a caneth config json file;
+- Added filters on Executed Emergency Schedule Reports;
+- Display Emergency Lamp Failures on Status (Report and Property Window);
+- Created Config Merging Tool on installer;
+- Fixed Bug on Schedule Tasks not picking up diferent switches in the same device;
+- Fixed pagination on Executed Schedules Report;
+- Fixed Bug on double click of Reports;
+
+v 1.0.18 on 2014-12-15
+---------------------
+- Added TCP Connection timeout;
+- Fixed Bug for Status History not ask to select a date to show;
+- More user-friendly Scheduled Tasks' failure Messages;
+- Fixed Bug for Scheduling cronjobs;
+
+v 1.0.17 on 2014-11-28
+---------------------
+Migration: m141126_235000_schedule_priority
+---------------------
+- Csv Updates for components;
+- Schedules Prioritization;
+- When clicking on "Print" button on Schedule List, will now open on "print preview" mode in a new window;
+
+v 1.0.16 on 2014-11-25
+---------------------
+- On Luminaires when status <> on we save lux level is always 0 regardless of the response given by CAN;
+- On Emergency Test Relay (types=7,112,113) when status bits = 'FF' we use lux level to determine the lamp status. This was due to an old firmware bug;
+- Created Debug tool for Status Requests. To use it run the following command:
+"C:\xampp\php\php.exe C:\xampp\htdocs\lcheadend\cli.php statusDebug"
+
+v 1.0.15 on 2014-11-20
+---------------------
+- Fixed bug saving new failures on Emergency;
+- Fixed bug saving new failures on Status;
+- Fixed bug on Schedule Report export (pdf and csv);
+- Fixed Logo on Pdf Reports;
+- Added missing images from notifications;
+
+v 1.0.14 on 2014-11-19
+---------------------
+- Changed titles on Schedule views;
+- Fixed bug on Schedule views showing group as (-1);
+- Changed message feedback to user after manual trigger of a task;
+- Fixed bug not saving lc_id and dvc_id after trigger of a task;
+- Changed titles on Reports;
+- Changed filter text on Emergency Reports;
+
+v 1.0.13 on 2014-11-11
+---------------------
+Migration: m141110_225941_ethernet_save_config_filename
+---------------------
+- Original json file is now saved on data/configs folder;
+- Created Button on Ethernet Grid to allow for restoring the original json (when present);
+- Corrected Broken Links on site;
+- Corrected Error saving failure flags on Emergency;
+- Corrected Transaction being stuck when error occurs saving Failure flags on Emergency;
+- Fixed Hour when Manual triggering a Schedule;
+- Corrected Bug saving Attributes changes on LightCtrl or Ethernet;
+- Only create Attribute Change Command when needed for CAN;
+
+v 1.0.12 on 2014-11-08
+---------------------
+Migration: m141023_214619_notifications
+---------------------
+- Created User Notifications;
+- Added Error Notification when Commands (ETT & CCI) stop retrying after failures;
+- Created Button to allow manual trigger of Scheduled Tasks;
+- Scheduled Tasks are marked with user that triggers them manually or by the user who created them if triggered automaticaly;
+- Added Executed By and Executed At on Executed tasks Grid;
+- Added Created By on Scheduled Tasks;
+- Fix Bug on Scheduled Tree when editing Schedule was showing wrong CCI on tree;
+- Not showing firmware version when device Type < 128 (must reload json);
+
+v 1.0.11 on 2014-10-25
+---------------------
+- Included Release Notes on Application Root;
+- Changed Json Parser to validate json entries to display user friendlier message when jsons are corrupt;
+- Tree View on Schedules now show a sub Group to hold CCI;
+- Fixed bug on Schedule Tree where Emergency Lamps where not showing;
+- Properties customization only saves after hitting OK button;
+- Created Attributes Changed Command for Properties customization;
+- Failed Attributes Changed Command are now always retried;
+- A sub group on Scheduled Tree was created for grouping CCIs under SCC;
+- Fixed Bug not creating a Executed Scheduled Task record, even when running the command;
+- Fixed Bug not Saving to Emergency After Status Retrieval;
+- Fixed Bug on Devices showed on Emergency Reports after a Scheduled Test;
+- Fixed Header on Emergency Reports (Draw Id is gone, now showing Floor, Lc Id, Dvc Id and Group);
+
+v 1.0.10 on 2014-10-11
+---------------------
+- List of pending tasks on Schedule now display a next due date;
+- Increases Area config fields (props & tree) to a bigger size to allow bigger json input files;
+- Emergency Trigger Test commands, when receive error, now retry maximum of 3 times before aborting;
+- Clean Contact Input commands, when receive error, now retry for a maximum of 1 day before aborting;
+- Implemented release notes and version number on installer;
+- Fixed bug where migrations were not being triggered on intaller;
+
+v 1.0.09 on 2014-10-01
+---------------------
+- Fixed Date on executed tasks on Schedule;
+- Removed "end date" from executed tasks on Schedule;
+- Changed label of start date to "executed at" on executed tasks grid;
+- Added Switch Number to Scheduling views;
+- Removed Periodicity column from executed tasks grid;
+- Fixed Bug where editing a Schedule, device was not being selected on tree;
+- Fixed Bug where editing a Schedule, form was not showing selected periodicity;
+- Fixed Bug on Browser Cache Control tool where versioning number was not being reset;
+- Created config to change the application logo;
+- Fixed migration to minify json config files;
+
+v 1.0.08 - v 1.0.01
+---------------------
+- Former implementations of Front End tool;

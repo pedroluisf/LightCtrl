@@ -1,0 +1,13 @@
+RewriteEngine on
+
+#Rules for Versioned Static Files
+RewriteRule themes/intsys/images_([0-9]+)/(.*)$  themes/intsys/images/$2
+RewriteRule themes/intsys/css_([0-9]+)/(.*)$  themes/intsys/css/$2
+RewriteRule js_([0-9]+)/(.*)$  js/$2
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php

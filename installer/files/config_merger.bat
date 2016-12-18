@@ -1,0 +1,1 @@
+c:\xampp\php\php.exe c:\xampp\htdocs\lcheadend\protected\commands\shell\MergeConfigs.php > C:\xampp\htdocs\lcheadend\protected\config\merge.log 2>&1

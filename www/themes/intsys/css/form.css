@@ -1,0 +1,48 @@
+.form-flex {
+    display: flex;
+}
+
+.form-hidden {
+    display: none;
+}
+
+#schedule_container{
+    margin-left: 240px;
+}
+
+
+#schedule-form .form_date_label {
+    width: 155px;
+    margin-right: 25px;
+}
+
+#schedule-form .date_time_row {
+    display: inline-flex;
+}
+
+#schedule-form #CommandSchedule_event_time {
+    text-align: center;
+}
+
+#schedule-form #CommandSchedule_periodicity {
+    display: inline-flex;
+}
+
+#schedule-form #CommandSchedule_periodicity input {
+    margin-right: 5px;
+}
+
+#schedule-form #CommandSchedule_periodicity label {
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+#schedule-form .form_week_days {
+    display: inline-flex;
+}
+
+#schedule-form .form_week_days label {
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 10px;
+}

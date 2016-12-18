@@ -1,0 +1,4 @@
+Lighting Controls Headend was successfuly installed
+
+Do not forget to start MySQL and Apache Service to start using the application.
+You should also consider setting a password for user root in MySQL for security purposes.
